@@ -196,11 +196,30 @@ button:hover, a.button:hover {
     z-index: 2; /* Asegura que la imagen esté encima de la sección de inicio */
 }
 
+
 .gato-img img {
     width: 100%; /* La imagen se ajustará al tamaño de su contenedor */
     height: auto;
     display: block;
 }
+
+.gatoTintan-img{
+    position: absolute;
+    top: 1620px; /* Ajusta esta propiedad para mover la imagen hacia arriba o abajo */
+    left: 50%; /* Coloca la imagen a la derecha */
+    width: 100px; /* Ajusta el tamaño de la imagen según lo desees */
+    z-index: 2; /* Asegura que la imagen esté encima de la sección de inicio */
+    border-radius: 50%;
+
+}
+
+.gatoTintan-img img{
+    width: 100%; /* La imagen se ajustará al tamaño de su contenedor */
+    height: auto;
+    display: block;
+
+}
+
 
 /* Resaltar palabras clave */
 .highlight {
@@ -262,6 +281,15 @@ button:hover, a.button:hover {
     animation: fadeInUp 1.5s forwards;
 }
 
+#famosos h1{
+    color: #f1c40f;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
 /* Estilos para los videos */
 .video-tiktok, .video-youtube {
     width: 100%;
@@ -308,6 +336,31 @@ button:hover, a.button:hover {
     }
 }
 
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 400px;
+    overflow: hidden;
+    margin: auto;
+    left: -22%;
+}
+.carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.carousel img.active {
+    opacity: 1;
+}
+
+#foto1 {
+    width: 600px;
+  
+}
 /* Media query para móviles */
 @media screen and (max-width: 768px) {
     #navbar .menu ul {
@@ -339,6 +392,15 @@ button:hover, a.button:hover {
         right: 35%; /* Coloca la imagen a la derecha */
         width: 150px; /* Ajusta el tamaño de la imagen según lo desees */
         z-index: 2; /* Asegura que la imagen esté encima de la sección de inicio */
+    }
+
+    .gatoTintan-img{
+        position: absolute;
+        top: 2800px; /* Ajusta esta propiedad para mover la imagen hacia arriba o abajo */
+        left: 0%; /* Coloca la imagen a la derecha */
+        width: 100px; /* Ajusta el tamaño de la imagen según lo desees */
+        z-index: 2; /* Asegura que la imagen esté encima de la sección de inicio */
+    
     }
 
     .nosotros-content {
@@ -376,5 +438,19 @@ button:hover, a.button:hover {
     }
     
 
+    .carousel {
+        position: relative;
+        width: 204%;
+        max-width: 264%;
+        height: 400px;
+        overflow: hidden;
+        margin: auto;
+        left: -100%;
+    }
+
+    #foto1 {
+        width: 50%;
+      
+    }
 
 }
