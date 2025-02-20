@@ -20,6 +20,7 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#redes">Redes Sociales</a></li>
+                <li><a href="#famosos">Ronroneando con los Famosos</a></li>
                 <li><a href="#cotizador">Cotizador</a></li>
             </ul>
         </div>
@@ -84,6 +85,32 @@
         </div>
     </section>
     
+
+    <div class="gatoTintan-img">
+        <img src="./imagenes/tintan.png" alt="Gato" id="gato">
+    </div>
+    <!-- Nueva Sección: Ronroneando con los Famosos -->
+     <!-- Nueva Sección: Ronroneando con los Famosos -->
+     <section id="famosos">
+        <div class="content">
+            <h1>Ronroneando con los Famosos</h1>
+        </div>
+        <div class="carousel">
+            <img id="foto1" src="./imagenes/foto2.jpg" alt="Hugo Sánchez" class="active" >
+            <img id="foto1" src="./imagenes/foto3.jpg" alt="Paquita la del Barrio" >
+            <img id="foto1" src="./imagenes/grupo1.jpg" alt="Rocío Dúrcal" >
+        </div>
+        <script>
+            let index = 0;
+            const images = document.querySelectorAll('.carousel img');
+            setInterval(() => {
+                images[index].classList.remove('active');
+                index = (index + 1) % images.length;
+                images[index].classList.add('active');
+            }, 3000);
+        </script>
+    </section>
+
 
     <section id="cotizador">
         <div class="content">
