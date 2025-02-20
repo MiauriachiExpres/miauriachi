@@ -1,0 +1,380 @@
+/* Reset de estilos básicos */
+/* Estilo global para habilitar el scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Barra de navegación */
+#navbar {
+    background-color: #000; /* Color negro */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+#logo {
+    width: 150px;
+}
+
+#navbar .menu ul {
+    list-style: none;
+    display: flex;
+}
+
+#navbar .menu ul li {
+    margin: 0 20px;
+}
+
+#navbar .menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#navbar .menu ul li a:hover {
+    color: #f39c12; /* Color dorado al pasar el mouse */
+}
+
+/* Menu móvil */
+#menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Estilos de las secciones */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Sección de inicio */
+section#inicio {
+    background: url('../imagenes/Plaza-Garibaldi-2.jpg') no-repeat center center/cover;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+    /* overflow: hidden; */
+}
+
+/* Efecto Parallax: movimiento del fondo al hacer scroll */
+section#inicio::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Capa oscura para mejorar la legibilidad */
+    z-index: -1; /* Asegura que la capa de color no tape el contenido */
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+section#inicio {
+    background-attachment: fixed; /* Este es el truco del parallax */
+}
+
+/* Títulos y texto en la sección de inicio */
+section#inicio h1 {
+    font-size: 3rem;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+section#inicio p {
+    font-size: 1.5rem;
+}
+
+/* Sección "Nosotros" */
+#nosotros {
+    background-color: #000;
+    color: black;
+    padding: 24px 20px;
+}
+
+#nosotros h1 {
+    color: #f1c40f;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    opacity: 0; /* Inicialmente oculto */
+    animation: fadeInUp 1s forwards; /* Animación al hacer scroll */
+}
+
+/* Contenedor principal de la sección "Nosotros" */
+.nosotros-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Esto asegura que el diseño sea flexible para pantallas más pequeñas */
+    gap: 20px; /* Espaciado entre la imagen y el texto */
+    opacity: 0; /* Inicialmente oculto */
+    animation: fadeInUp 1.5s forwards; /* Animación al hacer scroll */
+}
+
+/* Estilo de la imagen */
+.nosotros-img img {
+    width: 100%;
+    max-width: 350px; /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+/* Estilo de la descripción */
+.nosotros-desc {
+    flex: 1;
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 0 20px;
+}/* Sección "Redes Sociales" */
+#redes {
+    background-color: #ffffff;
+    color: white;
+}
+
+#redes h1 {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+/* Sección "Cotizador" */
+#cotizador {
+    background-color: #27ae60;
+    color: white;
+}
+
+#cotizador h1 {
+    color: #fff;
+}
+
+/* Estilos de los botones */
+button, a.button {
+    background-color: #e67e22;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+button:hover, a.button:hover {
+    background-color: #d35400;
+}
+
+/* Imagen del gato flotante */
+.gato-img {
+    position: absolute;
+    top: 320px; /* Ajusta esta propiedad para mover la imagen hacia arriba o abajo */
+    right: 0%; /* Coloca la imagen a la derecha */
+    width: 250px; /* Ajusta el tamaño de la imagen según lo desees */
+    z-index: 2; /* Asegura que la imagen esté encima de la sección de inicio */
+}
+
+.gato-img img {
+    width: 100%; /* La imagen se ajustará al tamaño de su contenedor */
+    height: auto;
+    display: block;
+}
+
+/* Resaltar palabras clave */
+.highlight {
+    color: #f39c12; /* Resalta las palabras con color dorado */
+    font-weight: bold;
+}
+
+/* Animación de aparición con desplazamiento */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Comienza desde abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Se mueve a su posición original */
+    }
+}
+
+/* Sección "Redes Sociales" */
+#redes {
+    background-color: #ffffff;
+    color: white;
+    padding: 60px 20px;
+    position: relative;
+}
+
+#redes h1 {
+    color: #f1c40f;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+/* Imagen flotante entre las secciones */
+.redes-img {
+    position: absolute;
+    top: 20px; /* Ajusta esta propiedad para mover la imagen hacia arriba o abajo */
+    left: 10%;
+    width: 150px; /* Ajusta el tamaño de la imagen */
+    z-index: 2;
+}
+
+.redes-img img {
+    width: 100%;
+    height: auto;
+}
+
+/* Contenedor de los videos y enlace de Facebook */
+.redes-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+}
+
+/* Estilos para los videos */
+.video-tiktok, .video-youtube {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* Estilo del iframe */
+.video-tiktok iframe, .video-youtube iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilos para el enlace de Facebook */
+.facebook-link {
+    text-align: center;
+}
+
+.facebook-link a {
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.facebook-link img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 10px;
+}
+
+/* Animación de deslizamiento de los elementos */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Comienza desde abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Se mueve a su posición original */
+    }
+}
+
+/* Media query para móviles */
+@media screen and (max-width: 768px) {
+    #navbar .menu ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000; /* Barra de navegación negra en móvil */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    #navbar .menu ul li {
+        margin: 10px 0;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    #navbar .menu.active ul {
+        display: flex;
+    }
+
+    .gato-img {
+        position: absolute;
+        top: 420px; /* Ajusta esta propiedad para mover la imagen hacia arriba o abajo */
+        right: 35%; /* Coloca la imagen a la derecha */
+        width: 150px; /* Ajusta el tamaño de la imagen según lo desees */
+        z-index: 2; /* Asegura que la imagen esté encima de la sección de inicio */
+    }
+
+    .nosotros-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nosotros-desc {
+        padding: 0;
+    }
+
+    .nosotros-img img {
+        max-width: 100%; /* Ajusta la imagen al 100% del contenedor en pantallas pequeñas */
+    }
+
+    .redes-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .video-tiktok iframe, .video-youtube iframe {
+        max-width: 100%;
+    }
+
+    .facebook-link a {
+        font-size: 1.5rem;
+    }
+
+    .redes-img {
+        position: absolute;
+        top: 20px; /* Ajusta esta propiedad para mover la imagen hacia arriba o abajo */
+        left: -5%;
+        width: 100px; /* Ajusta el tamaño de la imagen */
+        z-index: 2;
+    }
+    
+
+
+}
